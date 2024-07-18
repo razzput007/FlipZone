@@ -22,10 +22,13 @@ const ProductManagement = lazy(
 const TransactionManagement = lazy(
   () => import("./pages/admin/management/transactionmanagement")
 );
+import Header from "./components/Header";
 const App = () => {
   return (
-    <Suspense fallback={<Loader/>}>
-    <Router> 
+    
+    <Router>
+      <Header />
+      <Suspense fallback={<Loader/>}>
       <Routes>
        <Route path="/" element={<Home/>}/>
        <Route path="/search" element={<Search/>}/>
@@ -59,8 +62,9 @@ const App = () => {
   </Route>;
 
       </Routes>
+      </Suspense> 
     </Router>
-    </Suspense>
+    
   )
 }
 

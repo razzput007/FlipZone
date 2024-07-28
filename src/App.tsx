@@ -22,7 +22,9 @@ const ProductManagement = lazy(
 const TransactionManagement = lazy(
   () => import("./pages/admin/management/transactionmanagement")
 );
+const Shipping=lazy(()=>import ("./pages/Shipping"))
 import Header from "./components/Header";
+
 const App = () => {
   return (
     
@@ -33,6 +35,12 @@ const App = () => {
        <Route path="/" element={<Home/>}/>
        <Route path="/search" element={<Search/>}/>
        <Route path="/cart" element={<Cart/>}/>
+
+       {/*Logged in user routes */}
+       <Route>
+       <Route path="/shipping" element={<Shipping/>}/>
+       </Route>
+       
 
        {/*Admin Routes*/}
        <Route

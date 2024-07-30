@@ -25,6 +25,7 @@ const TransactionManagement = lazy(
 const Shipping=lazy(()=>import ("./pages/Shipping"))
 
 const Login=lazy(()=>import("./pages/Login"));
+const Order=lazy(()=>import("./pages/Order"))
 import Header from "./components/Header";
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
        {/*Logged in user routes */}
        <Route>
        <Route path="/shipping" element={<Shipping/>}/>
+       <Route path="/orders" element={<Order/>}/>
        </Route>
        
 
